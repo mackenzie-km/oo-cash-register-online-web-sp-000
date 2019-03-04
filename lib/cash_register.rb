@@ -4,7 +4,7 @@ class CashRegister
   attr_accessor :total, :discount, :recent_items
   
 #creates an array of all items so you know what you chose  
-@@items = []
+@@all_items = []
   
 #initializes an register with total of zero and an optional employee discount
 def initialize(discount = nil)
@@ -15,8 +15,8 @@ end
 #adds an item by updating total price and items array
 def add_item(title, price, quantity = 1)
   @total += price*quantity
-  @recent_items = [title, price, quantity]
- quantity.times{@@items << title}
+  @recent_items << [title, price, quantity]
+ quantity.times{@@all_items << title}
 end
 
  #applies employee discount if appropriate      
@@ -31,11 +31,15 @@ end
 
 #tells you what items you put into your register
 def items
-  @@items 
+  recent_item_display = []
+  @recent_items.each do |entry|
+      recent_item_display << entry[0] 
+  end 
+    recent_item_display
 end 
 
 def void_last_transaction
-@total -= @recent_items[1]
+@total -= @recent_items[-1][1]
 end 
 
 end 
