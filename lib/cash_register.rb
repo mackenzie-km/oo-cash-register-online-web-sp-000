@@ -3,14 +3,14 @@ class CashRegister
   #creates readers/writers for total and discount
   attr_accessor :total, :discount, :recent_items
   
-#creates an array of all items so you know what you chose  
+#creates an array of items so you know what you chose  
 @@class_items = []
-  @instance_items = []
   
 #initializes an register with total of zero and an optional employee discount
 def initialize(discount = nil)
   @total = 0
   @discount = discount
+  @instance_items = []
 end 
 
 #adds an item by updating total price and items array
