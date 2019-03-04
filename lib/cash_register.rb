@@ -38,7 +38,7 @@ def items
 end 
 
 def void_last_transaction
-  price = @instance_items[-1][1]
+price = @instance_items[-1][1]
 @total -= price
 end 
 
