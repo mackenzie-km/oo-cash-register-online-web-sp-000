@@ -34,7 +34,7 @@ end
 def items
   instance_item_display = []
   @instance_items.each do |entry|
-       entry[1].times{instance_item_display << entry[0]} 
+       entry[2].times{instance_item_display << entry[0]} 
   end 
     instance_item_display
 end 
