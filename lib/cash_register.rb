@@ -5,6 +5,7 @@ class CashRegister
   
 #creates an array of all items so you know what you chose  
 @@class_items = []
+  @instance_items = []
   
 #initializes an register with total of zero and an optional employee discount
 def initialize(discount = nil)
@@ -14,7 +15,6 @@ end
 
 #adds an item by updating total price and items array
 def add_item(title, price, quantity = 1)
-  @instance_items = []
   @total += price*quantity
   @instance_items << [title, price, quantity]
  quantity.times{@@class_items << title}
