@@ -3,9 +3,6 @@ class CashRegister
   #creates readers/writers for total and discount
   attr_accessor :total, :discount, :recent_items
   
-#creates an array of items so you know what you chose  
-@@class_items = []
-  
 #initializes an register with total of zero and an optional employee discount
 def initialize(discount = nil)
   @total = 0
@@ -17,7 +14,6 @@ end
 def add_item(title, price, quantity = 1)
   @total += price*quantity
   @instance_items << [title, price, quantity]
- quantity.times{@@class_items << title}
 end
 
  #applies employee discount if appropriate      
@@ -34,7 +30,9 @@ end
 def items
   instance_item_display = []
   @instance_items.each do |entry|
-       entry[2].times{instance_item_display << entry[0]} 
+    quantity = entry[2]
+    item = entry[0]
+       quantity.times{instance_item_display << item} 
   end 
     instance_item_display
 end 
