@@ -4,7 +4,7 @@ class CashRegister
   attr_accessor :total, :discount, :recent_items
   
 #creates an array of all items so you know what you chose  
-@@all_items = []
+@@class_items = []
   
 #initializes an register with total of zero and an optional employee discount
 def initialize(discount = nil)
