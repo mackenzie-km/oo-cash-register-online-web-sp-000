@@ -14,6 +14,7 @@ end
 
 #adds an item by updating total price and items array
 def add_item(title, price, quantity = 1)
+  @recent_items = []
   @total += price*quantity
   @recent_items << [title, price, quantity]
  quantity.times{@@all_items << title}
